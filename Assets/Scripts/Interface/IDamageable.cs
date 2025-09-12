@@ -45,7 +45,7 @@ public interface IDamageable
     bool IsDead { get; }
 
     /// <summary>Gây sát thương. Trả về lượng sát thương thực tế đã trừ (sau khi tính giáp/kháng).</summary>
-    float ApplyDamage(in DamageContext ctx);
+    float ApplyDamage(float Damage, DamageType type,float duration);
 
     /// <summary>Hồi máu. Trả về lượng máu thực tế đã hồi.</summary>
     float Heal(float amount);

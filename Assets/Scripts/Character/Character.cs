@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Character : MonoBehaviour, IDamageable
 {
     [Header("Config")]
-    [SerializeField] protected CharacterData characterData;
+    public CharacterData characterData;
     [SerializeField] protected Trait trait; // có thể null
 
     // ===== Runtime base (copy từ CharacterData + Trait) =====
@@ -48,17 +48,18 @@ public class Character : MonoBehaviour, IDamageable
     public float Attack      => _base.Attack      + _mods.Attack;
     public float Armor       => _base.Armor       + _mods.Armor;
     public float MagicResist => _base.MagicResist + _mods.MagicResist;
-
+    
     public event Action<DamageContext, float> OnDamaged;
     public event Action<float> OnHealed;
     public event Action OnDied;
+    
 
     // ================= Lifecycle =================
     protected virtual void Start()
     {
         RebuildBaseFromData();     // tạo base từ CharacterData + Trait
         currentHealth = MaxHealth; // trạng thái khởi đầu
-        currentMana   = _base.MaxMana;
+        currentMana = _base.MaxMana;
     }
 
     // gọi hàm này nếu thay đổi CharacterData / Trait lúc runtime
@@ -109,14 +110,13 @@ public class Character : MonoBehaviour, IDamageable
     }
 
     // ================= Combat =================
-    public virtual float ApplyDamage(in DamageContext ctx)
+    public virtual float ApplyDamage(float Damage, DamageType type, float duration)
     {
         if (IsDead) return 0f;
 
-        float actual = CalculateDamageAfterMitigation(ctx.Amount, ctx.Type);
+        float actual = CalculateDamageAfterMitigation(Damage, type);
         currentHealth = Mathf.Max(0f, currentHealth - actual);
 
-        OnDamaged?.Invoke(ctx, actual);
         if (IsDead) { OnDied?.Invoke(); Die(); }
 
         return actual;

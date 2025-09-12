@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32360bed71210e149b03118d34157fb3, type: 3}
+  m_Name: SO_Human_Mage_4
+  m_EditorClassIdentifier: 
+  characterID: 0
+  characterName: Human_Mage
+  role: 2
+  classChar: 6
+  personality: 6
+  maxHealth: 100
+  maxMana: 10
+  attack: 10
+  health: 100
+  mana: 10
+  magic: 1
+  armor: 1
+  magicResist: 1
+  evasion: 0
+  lifeSteal: 0
+  attackSpeed: 1
+  moveSpeed: 5
+  STR: 1
+  INT: 1
+  DEX: 1
+  overrideCurve: {fileID: 0}
+  _previewFinal:
+    maxHealth: 0
+    health: 0
+    maxMana: 0
+    mana: 0
+    attack: 0
+    magic: 0
+    armor: 0
+    magicResist: 0
+    evasion: 0
+    lifeSteal: 0
+    attackSpeed: 0
+    moveSpeed: 0
+    STR: 0
+    INT: 0
+    DEX: 0

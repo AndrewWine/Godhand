@@ -11,11 +11,10 @@ public class ExperienceCurve : ScriptableObject
     public ExpCurveMode mode = ExpCurveMode.Formula;
 
     [Header("Table Mode")]
-    [Tooltip("expToNext[i] = EXP c?n ?? l�n t? (level i+1) -> (i+2). Size = maxLevel-1")]
-    public List<int> expToNext = new List<int>(); // v� d?: level 1->2 n?m ? index 0
+    public List<int> expToNext = new List<int>(); 
 
     [Header("Formula Mode")]
-    [Tooltip("EXP ?? l�n t? L -> L+1 = round(baseExp * pow(growth, L-1) * pow(L, power))")]
+    [Tooltip("EXP lan toi L -> L+1 = round(baseExp * pow(growth, L-1) * pow(L, power))")]
     public int baseExp = 100;
     [Range(1f, 2f)] public float growth = 1.15f;
     [Range(0f, 2f)] public float power = 1.0f;
@@ -37,7 +36,6 @@ public class ExperienceCurve : ScriptableObject
 
     public int TotalExpToReachLevel(int targetLevel)
     {
-        // T?ng EXP t�ch l?y c?n ?? ??t targetLevel (level 1 = 0)
         targetLevel = Mathf.Clamp(targetLevel, 1, maxLevel);
         int total = 0;
         for (int l = 1; l < targetLevel; l++)

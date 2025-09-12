@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Human : Character
 {
-    public override float ApplyDamage(in DamageContext ctx)
-    {
-        return base.ApplyDamage(ctx);
-    }
+    
+    //ApplyDamage
 
     public override float Heal(float amount)
     {

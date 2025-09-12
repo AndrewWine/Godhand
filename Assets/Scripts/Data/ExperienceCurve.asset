@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce53ac8b885e6a548a03929b5f46e7f3, type: 3}
-  m_Name: NewTrait
+  m_Script: {fileID: 11500000, guid: 64a8ecfd94b953547b4130ed49bd0c5f, type: 3}
+  m_Name: ExperienceCurve
   m_EditorClassIdentifier: 
-  traitName: 
-  description: 
-  modifiers:
-  - stat: 0
-    addFlat: 0
-    addPercent: 0
+  maxLevel: 15
+  mode: 1
+  expToNext: 
+  baseExp: 100
+  growth: 1.15
+  power: 1
